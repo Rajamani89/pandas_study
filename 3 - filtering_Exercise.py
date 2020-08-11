@@ -96,3 +96,12 @@ count_by_artists_years_2 = dataframe_2_reading.groupby(["artist","year"]).size()
 area = dataframe_2_reading["height"]*dataframe_2_reading["width"]
 dataframe_2_reading =  dataframe_2_reading.assign(area = area)
 
+#############################
+# Saving to excel
+############################
+
+blake_William_work.to_excel("example.xlsx")
+#ignoring index
+blake_William_work.to_excel("example.xlsx",index=False)
+#selecting columns
+blake_William_work.to_excel("example.xlsx",Columns=["artist","title"])
